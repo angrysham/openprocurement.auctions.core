@@ -4,6 +4,7 @@ before_script:
   - sudo add-apt-repository ppa:chris-lea/libsodium -y
   - sudo apt-get -qq update
   - sudo apt-get install libsodium13 -y
+  - sudo pip install mr.developer==2.0.0 
 python:
   - "2.7"
 services:
@@ -14,7 +15,7 @@ cache:
   directories:
     - eggs
 before_install:
-  - pip install setuptools==15.2
+  - pip install setuptools==7.0
   - python2 bootstrap.py
 install:
   - bin/buildout -N
